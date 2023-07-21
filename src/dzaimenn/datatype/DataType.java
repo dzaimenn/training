@@ -2,54 +2,41 @@ package dzaimenn.datatype;
 
 public class DataType {
     public static void main(String[] args) {
-        int num1 = 10;
-        int num2 = 5;
-        int sum = num1 + num2;
-        int difference = num1 - num2;
-        int product = num1 * num2;
-        int quotient = num1 / num2;
-        int remainder = num1 % num2;
+        int a = 10;
+        int b = 5;
+        int sum = a + b;
+        int difference = a - b;
+        int product = a * b;
+        double division = (double) a / b;
+        int modulus = a % b;
 
-        double doubleNum1 = 10.5;
-        double doubleNum2 = 3.5;
-        double doubleSum = doubleNum1 + doubleNum2;
-        double doubleDifference = doubleNum1 - doubleNum2;
-        double doubleProduct = doubleNum1 * doubleNum2;
-        double doubleQuotient = doubleNum1 / doubleNum2;
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Division: " + division);
+        System.out.println("Modulus: " + modulus);
 
-        float floatNum1 = 20.5f;
-        float floatNum2 = 4.5f;
-        float floatSum = floatNum1 + floatNum2;
-        float floatDifference = floatNum1 - floatNum2;
-        float floatProduct = floatNum1 * floatNum2;
-        float floatQuotient = floatNum1 / floatNum2;
+        double pi = 3.14159;
+        float radius = 2.5f;
+        double area = pi * radius * radius;
+        double circumference = 2 * pi * radius;
 
-        long longNum1 = 1000000000L;
-        long longNum2 = 200000000L;
-        long longSum = longNum1 + longNum2;
-        long longDifference = longNum1 - longNum2;
-        long longProduct = longNum1 * longNum2;
-        long longQuotient = longNum1 / longNum2;
+        System.out.println("Area of Circle: " + area);
+        System.out.println("Circumference of Circle: " + circumference);
 
-        System.out.println("Integer Sum: " + sum);
-        System.out.println("Integer Difference: " + difference);
-        System.out.println("Integer Product: " + product);
-        System.out.println("Integer Quotient: " + quotient);
-        System.out.println("Integer Remainder: " + remainder);
+        long bigNumber = 1234567890123456789L;
+        System.out.println("Big Number: " + bigNumber);
 
-        System.out.println("Double Sum: " + doubleSum);
-        System.out.println("Double Difference: " + doubleDifference);
-        System.out.println("Double Product: " + doubleProduct);
-        System.out.println("Double Quotient: " + doubleQuotient);
+        byte smallNumber = 127;
+        System.out.println("Small Number: " + smallNumber);
 
-        System.out.println("Float Sum: " + floatSum);
-        System.out.println("Float Difference: " + floatDifference);
-        System.out.println("Float Product: " + floatProduct);
-        System.out.println("Float Quotient: " + floatQuotient);
+        short mediumNumber = 32767;
+        System.out.println("Medium Number: " + mediumNumber);
 
-        System.out.println("Long Sum: " + longSum);
-        System.out.println("Long Difference: " + longDifference);
-        System.out.println("Long Product: " + longProduct);
-        System.out.println("Long Quotient: " + longQuotient);
+        char letter = 'A';
+        System.out.println("Letter: " + letter);
+
+        boolean isJavaFun = true;
+        System.out.println("Is Java Fun? " + isJavaFun);
     }
 }
