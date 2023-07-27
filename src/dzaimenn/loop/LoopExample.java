@@ -1,65 +1,54 @@
 package dzaimenn.loop;
 
-import java.util.Scanner;
-
 public class LoopExample {
-    
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int totalCars = 10;
+        int totalCycles = 5;
 
-        System.out.print("Please input a number: ");
-        int number = scanner.nextInt();
+        System.out.println("Starting the simulation...");
 
-        System.out.println("Multiplication table for the number " + number + ":");
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(number + " multiplied by " + i + " equals " + (number * i));
-        }
-
-        int[] divisibleByThree = {3, 6, 9, 12, 15};
-        System.out.println("Numbers divisible by 3:");
-        for (int num : divisibleByThree) {
-            if (num % 3 == 0) {
-                System.out.println(num);
+        for (int i = 1; i <= totalCars; i++) {
+            System.out.print("Car " + i + " is moving. ");
+            if (i % 2 == 0) {
+                System.out.println("Car " + i + " is honking.");
+            } else {
+                System.out.println("Car " + i + " is not honking.");
             }
         }
 
-        System.out.println("Countdown from 10 to 1:");
-        for (int i = 10; i >= 1; i--) {
-            System.out.print(i + " ");
+        System.out.println("All cars have finished moving.");
+
+        for (int j = 1; j <= totalCycles; j++) {
+            System.out.print("Cycle " + j + " is moving. ");
+            if (j % 2 == 0) {
+                System.out.println("Cycle " + j + " has a passenger.");
+            } else {
+                System.out.println("Cycle " + j + " has no passenger.");
+            }
         }
-        System.out.println();
+
+        System.out.println("All cycles have finished moving.");
 
         int sum = 0;
-        for (int i = 0; i <= 100; i += 5) {
-            sum += i;
+        for (int k = 1; k <= 10; k++) {
+            sum += k;
         }
-        System.out.println("Sum of numbers from 0 to 100 (increasing by 5): " + sum);
+        System.out.println("The sum of numbers from 1 to 10 is: " + sum);
 
-        int[] array = {2, 4, 6, 8, 10};
-        int product = 1;
-        for (int num : array) {
-            product *= num;
+        int factorial = 1;
+        for (int m = 1; m <= 5; m++) {
+            factorial *= m;
         }
-        System.out.println("Product of numbers in the array: " + product);
+        System.out.println("The factorial of 5 is: " + factorial);
 
-        System.out.println("Even numbers from 1 to 20:");
-        for (int i = 2; i <= 20; i += 2) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-
-        System.out.println("Odd numbers from 1 to 20:");
-        for (int i = 1; i <= 20; i += 2) {
-            System.out.print(i + " ");
+        int[] numbers = {1, 2, 3, 4, 5};
+        System.out.print("Numbers: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
         }
         System.out.println();
 
-        System.out.println("Square numbers from 1 to 10:");
-        for (int i = 1; i <= 10; i++) {
-            System.out.print("Square of " + i + " is " + (i * i) + ", ");
-        }
-        System.out.println();
-
-        scanner.close();
+        System.out.println("End of the simulation.");
     }
 }
