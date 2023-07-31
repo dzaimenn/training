@@ -3,74 +3,71 @@ package dzaimenn.method;
 public class MethodExample {
 
     public static void main(String[] args) {
-        System.out.println("Welcome!");
 
-        int num1 = 10;
-        int num2 = 5;
-        int sum = addNumbers(num1, num2);
-        System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
+        int num1 = 15;
+        int num2 = 7;
+        int difference = subtractNumbers(num1, num2);
+        System.out.println("Difference between " + num1 + " and " + num2 + " is: " + difference);
 
-        double radius = 3.5;
-        double area = calculateCircleArea(radius);
-        System.out.println("Area of the circle with radius " + radius + " is: " + area);
+        double sideLength = 4.5;
+        double squareArea = calculateSquareArea(sideLength);
+        System.out.println("Area of the square with side length " + sideLength + " is: " + squareArea);
 
-        String message = "Hello, World!";
-        printMessage(message);
+        String welcomeMessage = "Hello, Java Developers!";
+        displayMessage(welcomeMessage);
 
-        boolean isEven = checkEvenOrOdd(sum);
-        System.out.println("Is the sum " + sum + " even? " + isEven);
+        boolean isOdd = checkOddNumber(difference);
+        System.out.println("Is the difference " + difference + " odd? " + isOdd);
 
-        int[] numbers = {1, 2, 3, 4, 5};
-        System.out.println("Printing numbers array:");
-        printIntArray(numbers);
+        int[] integers = {2, 4, 6, 8, 10};
+        System.out.println("Printing integer array:");
+        printIntArray(integers);
 
-        String[] fruits = {"Apple", "Banana", "Orange", "Grapes", "Watermelon"};
-        System.out.println("Printing fruits array:");
-        printStringArray(fruits);
+        String[] vegetables = {"Carrot", "Broccoli", "Tomato", "Cabbage", "Spinach"};
+        System.out.println("Printing vegetables array:");
+        printStringArray(vegetables);
 
-        int factorialNum = 5;
-        long factorialResult = calculateFactorial(factorialNum);
-        System.out.println("Factorial of " + factorialNum + " is: " + factorialResult);
+        int exponent = 3;
+        long powerResult = calculatePower(2, exponent);
+        System.out.println("2 raised to the power of " + exponent + " is: " + powerResult);
     }
 
-    public static int addNumbers(int a, int b) {
-        return a + b;
+    public static int subtractNumbers(int x, int y) {
+        return x - y;
     }
 
-    public static double calculateCircleArea(double radius) {
-        return Math.PI * radius * radius;
+    public static double calculateSquareArea(double side) {
+        return side * side;
     }
 
-    public static void printMessage(String message) {
-        System.out.println("Message to print: " + message);
+    public static void displayMessage(String message) {
+        System.out.println("Welcome message: " + message);
     }
 
-    public static boolean checkEvenOrOdd(int number) {
-        return number % 2 == 0;
+    public static boolean checkOddNumber(int number) {
+        return number % 2 != 0;
     }
 
-    public static void printIntArray(int[] arr) {
-        for (int num : arr) {
+    public static void printIntArray(int[] array) {
+        for (int num : array) {
             System.out.print(num + " ");
         }
         System.out.println();
     }
 
-    public static void printStringArray(String[] arr) {
-        for (String element : arr) {
-            System.out.print(element + " ");
+    public static void printStringArray(String[] array) {
+        for (String item : array) {
+            System.out.print(item + " ");
         }
         System.out.println();
     }
 
-    public static long calculateFactorial(int n) {
-        if (n == 0)
-            return 1;
-        long fact = 1;
-        for (int i = 1; i <= n; i++) {
-            fact *= i;
+    public static long calculatePower(int base, int exponent) {
+        long result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
         }
-        return fact;
+        return result;
     }
 
 }
