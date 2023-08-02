@@ -25,6 +25,10 @@ public class MethodExample2 {
         int minValue = findMinValue(array);
         boolean isPrime = isPrimeNumber(a);
         boolean isPalindrome = isPalindromeWord("racecar");
+
+        // Additional variables
+        boolean isZero = isZeroNumber(0);
+        int powerResult = calculatePower(2, 3);
     }
 
     public static int add(int x, int y) {
@@ -119,4 +123,16 @@ public class MethodExample2 {
         return word.equalsIgnoreCase(reversed);
     }
 
+    public static boolean isZeroNumber(int x) {
+        return x == 0;
+    }
+
+    public static int calculatePower(int base, int exponent) {
+        int result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+    
 }
