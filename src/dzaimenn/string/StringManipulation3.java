@@ -1,5 +1,7 @@
 package dzaimenn.string;
 
+import java.util.Random;
+
 public class StringManipulation3 {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class StringManipulation3 {
         int age = askForAge();
         String ageCategory = determineAgeCategory(age);
         displayAgeCategory(ageCategory);
+        generateRandomNumbers();
     }
 
     public static void greetUser() {
@@ -52,6 +55,16 @@ public class StringManipulation3 {
 
     public static void displayAgeCategory(String ageCategory) {
         System.out.println("Based on your age, you are categorized as a(n) " + ageCategory + ".");
+    }
+
+    public static void generateRandomNumbers() {
+        System.out.println("\nGenerating 10 random numbers between 1 and 100:");
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int randomNumber = random.nextInt(100) + 1;
+            System.out.print(randomNumber + " ");
+        }
+        System.out.println("\n");
     }
 
 }
