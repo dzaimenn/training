@@ -90,5 +90,5 @@ class DisplayUtilities {
     public void displayPowerResult(int base, int exponent, long result) {
         System.out.println(base + " raised to the power of " + exponent + " is: " + result);
     }
-    
+
 }
