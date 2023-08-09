@@ -1,7 +1,7 @@
 package dzaimenn.method;
 
 public class MethodExample4 {
-    
+
     public static void main(String[] args) {
         welcomeUser("Alex");
         int total = sumNumbers(3, 9);
