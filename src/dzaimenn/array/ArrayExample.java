@@ -1,50 +1,64 @@
 package dzaimenn.array;
 
+import java.util.Random;
+
 public class ArrayExample {
-    
+
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         String[] names = {"John", "Emma", "Michael", "Sophia", "William"};
         double[] prices = {2.5, 3.75, 1.99, 5.49, 10.0};
 
-        System.out.println("Numbers:");
-        for (int num : numbers) {
+        Random random = new Random();
+        int[] randomNumbers = new int[7];
+        for (int i = 0; i < randomNumbers.length; i++) {
+            randomNumbers[i] = random.nextInt(100);
+        }
+
+        System.out.println("Random Numbers:");
+        for (int num : randomNumbers) {
             System.out.print(num + " ");
         }
-        System.out.println("\nNames:");
-        for (String name : names) {
-            System.out.print(name + " ");
-        }
-        System.out.println("\nPrices:");
-        for (double price : prices) {
-            System.out.print(price + " ");
-        }
 
-        int sum = 0;
-        for (int num : numbers) {
-            sum += num;
+        int sumRandom = 0;
+        for (int num : randomNumbers) {
+            sumRandom += num;
         }
-        double average = (double) sum / numbers.length;
-        System.out.println("\nAverage of numbers: " + average);
+        System.out.println("\nSum of Random Numbers: " + sumRandom);
 
-        String longestName = "";
+        String shortestName = names[0];
         for (String name : names) {
-            if (name.length() > longestName.length()) {
-                longestName = name;
+            if (name.length() < shortestName.length()) {
+                shortestName = name;
             }
         }
-        System.out.println("Longest name: " + longestName);
+        System.out.println("Shortest name: " + shortestName);
 
-        System.out.println("Updated prices with 10% discount:");
-        for (int i = 0; i < prices.length; i++) {
-            prices[i] *= 0.9;
-            System.out.print(prices[i] + " ");
+        int[][] matrix = new int[3][3];
+        int count = 1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = count++;
+            }
         }
 
-        System.out.println("\nReversed numbers:");
-        for (int i = numbers.length - 1; i >= 0; i--) {
-            System.out.print(numbers[i] + " ");
+        System.out.println("Matrix:");
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
         }
+
+        int max = matrix[0][0];
+        for (int[] row : matrix) {
+            for (int element : row) {
+                if (element > max) {
+                    max = element;
+                }
+            }
+        }
+        System.out.println("Maximum value in the matrix: " + max);
     }
-
+    
 }
