@@ -60,5 +60,5 @@ public class ArrayExample {
         }
         System.out.println("Maximum value in the matrix: " + max);
     }
-    
+
 }
