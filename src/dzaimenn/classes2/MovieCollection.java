@@ -1,24 +1,27 @@
 package dzaimenn.classes2;
 
-class MovieCollection {
-    private Movie[] movies;
-    private int size;
+import java.util.ArrayList;
+import java.util.List;
 
-    public MovieCollection(int capacity) {
-        movies = new Movie[capacity];
-        size = 0;
+class MovieCollection {
+    private List<Movie> movies;
+
+    public MovieCollection() {
+        movies = new ArrayList<>();
     }
 
     public void addMovie(Movie movie) {
-        if (size < movies.length) {
-            movies[size++] = movie;
-        }
+        movies.add(movie);
     }
 
     public void listMovies() {
         System.out.println("List of Movies:");
-        for (int i = 0; i < size; i++) {
-            System.out.println(movies[i].getTitle() + " (" + movies[i].getYear() + ")");
+        for (Movie movie : movies) {
+            System.out.println("Title: " + movie.getTitle());
+            System.out.println("Year: " + movie.getYear());
+            System.out.println("Director: " + movie.getDirector());
+            System.out.println("Actors: " + movie.getActors());
+            System.out.println();
         }
     }
 

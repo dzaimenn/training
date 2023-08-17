@@ -41,6 +41,28 @@ public class Main {
             System.out.println("Do you want to add more movies? (yes/no)");
             answer = scanner.nextLine().trim().toLowerCase();
         }
+
+        collection.listMovies();
+
+        System.out.print("Enter the title of the movie to search: ");
+        String searchTitle = scanner.nextLine();
+        boolean found = false;
+        for (Movie movie : collection.getMovies()) {
+            if (movie.getTitle().equalsIgnoreCase(searchTitle)) {
+                System.out.println("Movie found:");
+                System.out.println("Title: " + movie.getTitle());
+                System.out.println("Year: " + movie.getYear());
+                System.out.println("Director: " + movie.getDirector());
+                System.out.println("Actors: " + movie.getActors());
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Movie not found!");
+        }
+
+        scanner.close();
     }
 
 }
