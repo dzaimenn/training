@@ -42,29 +42,5 @@ public class Car {
     public void addFeature(String feature) {
         features.add(feature);
     }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public List<String> getFeatures() {
-        return features;
-    }
-
+    
 }
