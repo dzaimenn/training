@@ -8,7 +8,7 @@ import java.util.Random;
 public class ListExample {
 
     public static void main(String[] args) {
-        List<Integer> numbers = generateRandomNumbers(10);
+        List<Integer> numbers = generateRandomNumbers(15);
         System.out.println("Original list: " + numbers);
 
         int sum = calculateSum(numbers);
@@ -19,6 +19,15 @@ public class ListExample {
 
         List<Integer> evenNumbers = filterEvenNumbers(numbers);
         System.out.println("Even numbers in the list: " + evenNumbers);
+
+        int maxNumber = findMaxNumber(numbers);
+        System.out.println("Max number in the list: " + maxNumber);
+
+        List<Integer> squaredNumbers = squareList(numbers);
+        System.out.println("Squared numbers in the list: " + squaredNumbers);
+
+        List<Integer> reversedList = reverseList(numbers);
+        System.out.println("Reversed list: " + reversedList);
     }
 
     public static List<Integer> generateRandomNumbers(int size) {
@@ -53,5 +62,31 @@ public class ListExample {
         }
         return evenNumbers;
     }
-    
+
+    public static int findMaxNumber(List<Integer> numbers) {
+        int max = Integer.MIN_VALUE;
+        for (int number : numbers) {
+            if (number > max) {
+                max = number;
+            }
+        }
+        return max;
+    }
+
+    public static List<Integer> squareList(List<Integer> numbers) {
+        List<Integer> squaredNumbers = new ArrayList<>();
+        for (int number : numbers) {
+            squaredNumbers.add(number * number);
+        }
+        return squaredNumbers;
+    }
+
+    public static List<Integer> reverseList(List<Integer> numbers) {
+        List<Integer> reversedList = new ArrayList<>();
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            reversedList.add(numbers.get(i));
+        }
+        return reversedList;
+    }
+
 }
