@@ -56,5 +56,5 @@ public class LinkedListExample {
         System.out.println("Does LinkedList contain 'Banana'? " + linkedList.contains("Banana"));
         System.out.println("Does Vector contain 'Lemon'? " + vector.contains("Lemon"));
     }
-    
+
 }
