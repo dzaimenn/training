@@ -38,10 +38,32 @@ public class LinkedHashSetExample {
         linkedHashSet.clear();
 
         if (linkedHashSet.isEmpty()) {
-            System.out.println("Empty.");
+            System.out.println("LinkedHashSet is empty.");
         } else {
-            System.out.println("Not empty.");
+            System.out.println("LinkedHashSet is not empty.");
         }
-    }
 
+        linkedHashSet.add("Watermelon");
+        linkedHashSet.add("Strawberry");
+        linkedHashSet.add("Mango");
+
+        System.out.println("Updated elements:");
+        for (String fruit : linkedHashSet) {
+            System.out.print(fruit + " ");
+        }
+        System.out.println();
+
+        Set<Integer> numberSet = new LinkedHashSet<>();
+
+        for (int i = 1; i <= 10; i++) {
+            numberSet.add(i);
+        }
+
+        System.out.println("Numbers in the set:");
+        for (int num : numberSet) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+    
 }
