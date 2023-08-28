@@ -65,5 +65,5 @@ public class LinkedHashSetExample {
         }
         System.out.println();
     }
-    
+
 }
