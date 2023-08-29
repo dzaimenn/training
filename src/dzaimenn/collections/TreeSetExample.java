@@ -7,11 +7,27 @@ public class TreeSetExample {
     public static void main(String[] args) {
         TreeSet<String> treeSet = new TreeSet<>();
 
-        treeSet.add("apple");
-        treeSet.add("banana");
-        treeSet.add("orange");
-        treeSet.add("grape");
-        treeSet.add("kiwi");
+        for (int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    treeSet.add("apple");
+                    break;
+                case 1:
+                    treeSet.add("banana");
+                    break;
+                case 2:
+                    treeSet.add("orange");
+                    break;
+                case 3:
+                    treeSet.add("grape");
+                    break;
+                case 4:
+                    treeSet.add("kiwi");
+                    break;
+                default:
+                    break;
+            }
+        }
 
         System.out.println("TreeSet elements:");
         for (String fruit : treeSet) {
@@ -30,6 +46,10 @@ public class TreeSetExample {
             System.out.print(fruit + " ");
         }
         System.out.println();
+
+        for (String fruit : treeSet) {
+            System.out.println("Fruit: " + fruit);
+        }
 
         System.out.println("Checking if 'banana' exists: " + treeSet.contains("banana"));
 
