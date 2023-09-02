@@ -1,7 +1,6 @@
 package dzaimenn.collections;
 
 import java.util.Hashtable;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -16,23 +15,25 @@ public class CityInformation {
     }
 
     private static void initializeCityData(TreeMap<String, String> cityCountryMap) {
-        cityCountryMap.put("Kyiv", "Ukraine");
-        cityCountryMap.put("Paris", "France");
-        cityCountryMap.put("Tokyo", "Japan");
+        String[] cities = {"Kyiv", "Paris", "Tokyo", "New York", "London"};
+        String[] countries = {"Ukraine", "France", "Japan", "USA", "UK"};
+        for (int i = 0; i < cities.length; i++) {
+            cityCountryMap.put(cities[i], countries[i]);
+        }
     }
 
     private static void initializePopulationData(Hashtable<String, Integer> cityPopulationTable) {
-        cityPopulationTable.put("Kyiv", 2800000);
-        cityPopulationTable.put("Paris", 2141000);
-        cityPopulationTable.put("Tokyo", 13960000);
+        String[] cities = {"Kyiv", "Paris", "Tokyo", "New York", "London"};
+        int[] populations = {2800000, 2141000, 13960000, 8406000, 9300000};
+        for (int i = 0; i < cities.length; i++) {
+            cityPopulationTable.put(cities[i], populations[i]);
+        }
     }
 
     private static void displayCityInformation(TreeMap<String, String> cityCountryMap, Hashtable<String, Integer> cityPopulationTable) {
-        Set<Map.Entry<String, String>> cityCountryEntries = cityCountryMap.entrySet();
-        Set<Map.Entry<String, Integer>> cityPopulationEntries = cityPopulationTable.entrySet();
-        for (Map.Entry<String, String> entry : cityCountryEntries) {
-            String city = entry.getKey();
-            String country = entry.getValue();
+        Set<String> cities = cityCountryMap.keySet();
+        for (String city : cities) {
+            String country = cityCountryMap.get(city);
             int population = cityPopulationTable.get(city);
             System.out.println("City: " + city + ", Country: " + country + ", Population: " + population);
         }
