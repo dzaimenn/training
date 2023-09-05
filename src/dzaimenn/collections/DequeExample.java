@@ -6,7 +6,6 @@ import java.util.LinkedList;
 public class DequeExample {
 
     public static void main(String[] args) {
-
         Deque<String> deque = new LinkedList<>();
 
         deque.add("One");
@@ -41,6 +40,24 @@ public class DequeExample {
         deque.clear();
 
         System.out.println("Deque after clearing: " + deque);
-    }
 
+        deque.add("Six");
+        deque.add("Seven");
+        deque.add("Eight");
+
+        System.out.println("Deque after adding more elements: " + deque);
+
+        deque.addFirst("NewFirst");
+        deque.addLast("NewLast");
+
+        System.out.println("Deque after re-adding first and last elements: " + deque);
+
+        boolean containsElement = deque.contains("Seven");
+        System.out.println("Deque contains 'Seven': " + containsElement);
+
+        boolean removed = deque.remove("Six");
+        System.out.println("Removed 'Six' from deque: " + removed);
+        System.out.println("Deque after removing 'Six': " + deque);
+    }
+    
 }
