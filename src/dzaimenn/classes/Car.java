@@ -2,45 +2,48 @@ package dzaimenn.classes;
 
 import java.util.List;
 
-public class Car {
+class Car {
     private String brand;
     private String model;
     private int year;
-    private double price;
-    private boolean isAvailable;
-    private List<String> features;
 
-    public Car(String brand, String model, int year, double price, boolean isAvailable, List<String> features) {
+    public Car(String brand, String model, int year) {
         this.brand = brand;
         this.model = model;
         this.year = year;
-        this.price = price;
-        this.isAvailable = isAvailable;
-        this.features = features;
     }
 
-    public void displayInfo() {
-        System.out.println("Brand: " + brand);
-        System.out.println("Model: " + model);
-        System.out.println("Year: " + year);
-        System.out.println("Price: $" + price);
-        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
-        System.out.println("Features:");
-        for (String feature : features) {
-            System.out.println("- " + feature);
-        }
+    public String getBrand() {
+        return brand;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public String getModel() {
+        return model;
     }
 
-    public void setAvailability(boolean isAvailable) {
-        this.isAvailable = isAvailable;
+    public int getYear() {
+        return year;
     }
 
-    public void addFeature(String feature) {
-        features.add(feature);
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                '}';
     }
 
 }

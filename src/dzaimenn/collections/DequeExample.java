@@ -59,5 +59,5 @@ public class DequeExample {
         System.out.println("Removed 'Six' from deque: " + removed);
         System.out.println("Deque after removing 'Six': " + deque);
     }
-    
+
 }
