@@ -17,30 +17,26 @@ public class Main {
         cars.add(new Car("Tesla", "Model S", 2022));
 
         System.out.println("List of cars:");
-        cars.forEach(System.out::println);
+        for (Car car : cars) { System.out.println(car); }
 
-        System.out.println("Populating the car map...");
-        for (Car car : cars) {
-            carMap.put(car.getBrand(), car);
-        }
+        for (Car car : cars) { carMap.put(car.getBrand(), car); }
 
         System.out.println("Map of cars:");
-        carMap.forEach((brand, car) -> System.out.println(brand + ": " + car));
+        for (Map.Entry<String, Car> entry : carMap.entrySet()) { System.out.println(entry.getKey() + ": " + entry.getValue()); }
 
         List<Car> oldCars = new ArrayList<>();
-        System.out.println("Identifying old cars (older than 5 years)...");
         for (Car car : cars) {
-            if (2024 - car.getYear() > 5) {
-                oldCars.add(car);
-            }
+            if (2024 - car.getYear() > 5) { oldCars.add(car); }
         }
 
         System.out.println("Old cars:");
-        oldCars.forEach(System.out::println);
-        cars.removeAll(oldCars);
+        for (Car car : oldCars) {
+            System.out.println(car);
+            cars.remove(car);
+        }
 
         System.out.println("Updated list of cars:");
-        cars.forEach(System.out::println);
+        for (Car car : cars) { System.out.println(car); }
     }
 
 }

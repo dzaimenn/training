@@ -1,7 +1,5 @@
 package dzaimenn.classes;
 
-import java.util.List;
-
 class Car {
     private String brand;
     private String model;
@@ -25,25 +23,9 @@ class Car {
         return year;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                '}';
+        return String.format("Brand: %s, Model: %s, Year: %d", brand, model, year);
     }
 
 }
