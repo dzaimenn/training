@@ -70,5 +70,5 @@ public class CollectionExamples {
             System.out.print(priorityQueue.poll() + " ");
         }
     }
-    
+
 }
