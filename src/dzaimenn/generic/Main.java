@@ -1,10 +1,13 @@
 package dzaimenn.generic;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 public class Main {
+
     public static void main(String[] args) {
         Box<Integer> integerBox = new Box<>();
         integerBox.add(1);
@@ -26,6 +29,34 @@ public class Main {
         System.out.println("Square of 5.5: " + example2.square());
 
         System.out.println("Is 10 greater than 5.5? " + example1.isGreaterThan(example2));
+
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Java");
+        stringList.add("is");
+        stringList.add("awesome");
+
+        printList(stringList);
+
+        Set<Double> doubleSet = new HashSet<>();
+        doubleSet.add(3.14);
+        doubleSet.add(2.71);
+        doubleSet.add(1.618);
+
+        printSet(doubleSet);
+    }
+
+    public static void printList(List<?> list) {
+        for (Object item : list) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+    }
+
+    public static void printSet(Set<? extends Number> set) {
+        for (Number number : set) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
     }
 
 }
@@ -91,5 +122,5 @@ class GenericExample<T extends Number> {
     public boolean isGreaterThan(GenericExample<?> other) {
         return data.doubleValue() > other.data.doubleValue();
     }
-    
+
 }
