@@ -34,5 +34,5 @@ public class Citizen {
     public void setAddress(String address) {
         this.address = address;
     }
-    
+
 }
