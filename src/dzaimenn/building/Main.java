@@ -1,35 +1,40 @@
 package dzaimenn.building;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        Build building = new Build("Office", 10, "123 Main Street");
+        List<Build> buildings = new ArrayList<>();
+        buildings.add(new Build("Office", 10, "123 Main Street"));
+        buildings.add(new Build("Residential", 5, "456 Elm Street"));
+        buildings.add(new Build("School", 3, "789 Oak Avenue"));
 
-        System.out.println("Building Type: " + building.getType());
-        System.out.println("Number of Floors: " + building.getNumberOfFloors());
-        System.out.println("Address: " + building.getAddress());
+        System.out.println("List of Buildings:");
+        for (Build building : buildings) {
+            System.out.println("Type: " + building.getType() + ", Floors: " + building.getNumberOfFloors() + ", Address: " + building.getAddress());
+        }
 
-        building.setType("Residential");
-        building.setNumberOfFloors(15);
-        building.setAddress("456 Elm Street");
+        List<Citizen> citizens = new ArrayList<>();
+        citizens.add(new Citizen("John Doe", 30, "123 Main Street"));
+        citizens.add(new Citizen("Jane Smith", 25, "456 Elm Street"));
+        citizens.add(new Citizen("Bob Johnson", 40, "789 Oak Avenue"));
 
-        System.out.println("\nUpdated Building Type: " + building.getType());
-        System.out.println("Updated Number of Floors: " + building.getNumberOfFloors());
-        System.out.println("Updated Address: " + building.getAddress());
+        System.out.println("\nList of Citizens:");
+        for (Citizen citizen : citizens) {
+            System.out.println("Name: " + citizen.getName() + ", Age: " + citizen.getAge() + ", Address: " + citizen.getAddress());
+        }
 
-        Citizen citizen = new Citizen("John Doe", 30, "789 Oak Avenue");
-
-        System.out.println("\nCitizen Name: " + citizen.getName());
-        System.out.println("Citizen Age: " + citizen.getAge());
-        System.out.println("Citizen Address: " + citizen.getAddress());
-
-        citizen.setName("Jane Smith");
-        citizen.setAge(25);
-        citizen.setAddress("321 Pine Street");
-
-        System.out.println("\nUpdated Citizen Name: " + citizen.getName());
-        System.out.println("Updated Citizen Age: " + citizen.getAge());
-        System.out.println("Updated Citizen Address: " + citizen.getAddress());
+        for (Build building : buildings) {
+            System.out.println("\nBuilding: " + building.getAddress());
+            System.out.println("Residents:");
+            for (Citizen citizen : citizens) {
+                if (citizen.getAddress().equals(building.getAddress())) {
+                    System.out.println("- " + citizen.getName());
+                }
+            }
+        }
     }
 
 }
