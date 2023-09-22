@@ -24,5 +24,5 @@ class City {
     public List<Citizen> getCitizens() {
         return citizens;
     }
-    
+
 }
