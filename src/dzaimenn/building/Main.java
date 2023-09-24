@@ -95,5 +95,5 @@ class District {
     public void addCitizen(Citizen citizen) {
         citizens.add(citizen);
     }
-    
+
 }
