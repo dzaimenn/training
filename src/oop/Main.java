@@ -13,22 +13,45 @@ public class Main {
         carList.add(myCar);
         carList.add(friendCar);
 
-        System.out.println("Cars in the list:");
         for (Car car : carList) {
             car.displayCarInfo();
             System.out.println();
         }
 
-        System.out.println("Starting engines:");
         for (Car car : carList) {
             car.startEngine();
         }
 
-        System.out.println("Cars after starting engines:");
+        for (Car car : carList) {
+            car.displayCarInfo();
+            System.out.println();
+        }
+
+        for (Car car : carList) {
+            car.setPrice(car.getPrice() * 1.1);
+            car.setYear(car.getYear() + 1);
+            car.setModel("New " + car.getModel());
+        }
+
+        for (Car car : carList) {
+            car.displayCarInfo();
+            System.out.println();
+        }
+
+        Car newCar = new Car("Chevrolet", "Cruze", 2023, 28000.0);
+        carList.add(newCar);
+
+        for (Car car : carList) {
+            car.displayCarInfo();
+            System.out.println();
+        }
+
+        carList.remove(friendCar);
+
         for (Car car : carList) {
             car.displayCarInfo();
             System.out.println();
         }
     }
-
+    
 }
