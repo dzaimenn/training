@@ -17,26 +17,6 @@ public class Main {
         System.out.println("Triangle Area: " + triangle.getArea());
         System.out.println("Triangle Perimeter: " + triangle.getPerimeter());
 
-        Shape square = new Square(5);
-        System.out.println("Square Area: " + square.getArea());
-        System.out.println("Square Perimeter: " + square.getPerimeter());
-
-        Shape rhombus = new Rhombus(4, 6);
-        System.out.println("Rhombus Area: " + rhombus.getArea());
-        System.out.println("Rhombus Perimeter: " + rhombus.getPerimeter());
-
-        if (square instanceof Square) {
-            System.out.println("Square is indeed a square!");
-        } else {
-            System.out.println("Square is not a square!");
-        }
-
-        Shape[] shapes = {circle, rectangle, triangle, square, rhombus};
-        for (Shape shape : shapes) {
-            System.out.println("Shape: " + shape.getClass().getSimpleName());
-            System.out.println("Area: " + shape.getArea());
-            System.out.println("Perimeter: " + shape.getPerimeter());
-        }
     }
 
 }
