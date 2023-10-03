@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class LambdaExample {
 
@@ -16,13 +17,22 @@ public class LambdaExample {
         words.add("watermelon");
 
         System.out.println("Words starting with 'a':");
-        words.stream().filter(startsWith("a")).forEach(System.out::println);
+        List<String> wordsStartingWithA = words.stream().filter(startsWith("a")).collect(Collectors.toList());
+        for (String word : wordsStartingWithA) {
+            System.out.println(word);
+        }
 
         System.out.println("Words ending with 'e':");
-        words.stream().filter(endsWith("e")).forEach(System.out::println);
+        List<String> wordsEndingWithE = words.stream().filter(endsWith("e")).collect(Collectors.toList());
+        for (String word : wordsEndingWithE) {
+            System.out.println(word);
+        }
 
         System.out.println("Uppercase words:");
-        words.stream().map(toUpperCase()).forEach(System.out::println);
+        List<String> uppercaseWords = words.stream().map(toUpperCase()).collect(Collectors.toList());
+        for (String word : uppercaseWords) {
+            System.out.println(word);
+        }
     }
 
     private static Predicate<String> startsWith(String prefix) {
@@ -36,5 +46,5 @@ public class LambdaExample {
     private static Function<String, String> toUpperCase() {
         return String::toUpperCase;
     }
-    
+
 }
