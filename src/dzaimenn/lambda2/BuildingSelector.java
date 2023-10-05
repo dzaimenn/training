@@ -1,4 +1,6 @@
 package dzaimenn.lambda2;
 
-public interface BuildingSelector {
+interface BuildingSelector {
+    boolean select(Building building);
+
 }
