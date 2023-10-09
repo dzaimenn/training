@@ -54,4 +54,31 @@ public class BuildingProcessor {
         }
     }
 
+    private static void printBuildingsWithSingleDigitFloors(List<Building> buildings) {
+        System.out.println("Buildings with single-digit floors:");
+        for (Building building : buildings) {
+            if (building.getFloors() < 10) {
+                System.out.println(building.getAddress() + " - " + building.getFloors() + " floors");
+            }
+        }
+    }
+
+    private static void printBuildingsWithAddressStartingWithDigit(List<Building> buildings) {
+        System.out.println("Buildings with addresses starting with a digit:");
+        for (Building building : buildings) {
+            char firstChar = building.getAddress().charAt(0);
+            if (Character.isDigit(firstChar)) {
+                System.out.println(building.getAddress() + " - " + building.getFloors() + " floors");
+            }
+        }
+    }
+
+    private static void printNumberOfBuildings(List<Building> buildings) {
+        System.out.println("Number of buildings: " + buildings.size());
+    }
+
+    private static void printTotalFloors(List<Building> buildings) {
+        System.out.println("Total number of floors: " + calculateTotalFloors(buildings));
+    }
+
 }
