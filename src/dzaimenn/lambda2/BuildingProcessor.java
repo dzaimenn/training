@@ -1,9 +1,31 @@
 package dzaimenn.lambda2;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class BuildingProcessor {
+
+    public static void main(String[] args) {
+
+        List<Building> buildings = new ArrayList<>();
+        buildings.add(new Building("123 Main St", 5));
+        buildings.add(new Building("456 Elm St", 8));
+        buildings.add(new Building("789 Oak St", 3));
+        buildings.add(new Building("101 Pine St", 12));
+
+        printSelectedBuildings(buildings, b -> b.getFloors() > 5);
+        printSelectedBuildings(buildings, b -> b.getAddress().contains("St"));
+
+        printAverageFloors(buildings);
+        printTallestBuilding(buildings);
+        printBuildingsWithEvenFloors(buildings);
+        printBuildingsInReverseOrder(buildings);
+        printBuildingsWithSingleDigitFloors(buildings);
+        printBuildingsWithAddressStartingWithDigit(buildings);
+        printNumberOfBuildings(buildings);
+        printTotalFloors(buildings);
+    }
 
     private static void printSelectedBuildings(List<Building> buildings, Predicate<Building> predicate) {
         for (Building building : buildings) {
