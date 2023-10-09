@@ -103,5 +103,5 @@ public class LambdaBuilding {
     private static void printTotalFloors(List<Building> buildings) {
         System.out.println("Total number of floors: " + calculateTotalFloors(buildings));
     }
-    
+
 }
