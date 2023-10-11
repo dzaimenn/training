@@ -1,8 +1,8 @@
 package dzaimenn.overloading;
 
 public class MethodOverloadingExample {
-
     private String message;
+    private int[] numbers;
 
     public MethodOverloadingExample() {
         this("Default Message");
@@ -10,6 +10,11 @@ public class MethodOverloadingExample {
 
     public MethodOverloadingExample(String message) {
         this.message = message;
+    }
+
+    public MethodOverloadingExample(String message, int[] numbers) {
+        this.message = message;
+        this.numbers = numbers;
     }
 
     public void displayMessage() {
@@ -32,6 +37,26 @@ public class MethodOverloadingExample {
         System.out.println("Processing text multiple times: " + text.repeat(times));
     }
 
+    public void processNumbers() {
+        if (numbers == null) {
+            System.out.println("No numbers to process.");
+        } else {
+            System.out.print("Processing numbers: ");
+            for (int num : numbers) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void processNumbers(int[] nums) {
+        System.out.print("Processing numbers: ");
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         MethodOverloadingExample example1 = new MethodOverloadingExample();
         example1.displayMessage();
@@ -42,6 +67,11 @@ public class MethodOverloadingExample {
         example2.displayMessage();
         example2.processNumber(3.14);
         example2.processText("Hello", 3);
+
+        int[] nums = {1, 2, 3, 4, 5};
+        MethodOverloadingExample example3 = new MethodOverloadingExample("Custom Message", nums);
+        example3.displayMessage();
+        example3.processNumbers();
     }
     
 }
