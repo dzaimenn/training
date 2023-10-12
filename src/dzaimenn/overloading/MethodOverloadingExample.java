@@ -1,8 +1,11 @@
 package dzaimenn.overloading;
 
+import java.util.Arrays;
+
 public class MethodOverloadingExample {
     private String message;
     private int[] numbers;
+    private boolean initialized;
 
     public MethodOverloadingExample() {
         this("Default Message");
@@ -10,15 +13,21 @@ public class MethodOverloadingExample {
 
     public MethodOverloadingExample(String message) {
         this.message = message;
+        this.initialized = true;
     }
 
     public MethodOverloadingExample(String message, int[] numbers) {
         this.message = message;
         this.numbers = numbers;
+        this.initialized = true;
+    }
+
+    public boolean isInitialized() {
+        return initialized;
     }
 
     public void displayMessage() {
-        System.out.println(message);
+        System.out.println("Message: " + message);
     }
 
     public void processNumber(int num) {
@@ -41,20 +50,24 @@ public class MethodOverloadingExample {
         if (numbers == null) {
             System.out.println("No numbers to process.");
         } else {
-            System.out.print("Processing numbers: ");
-            for (int num : numbers) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
+            System.out.println("Processing numbers: " + Arrays.toString(numbers));
         }
     }
 
     public void processNumbers(int[] nums) {
-        System.out.print("Processing numbers: ");
-        for (int num : nums) {
-            System.out.print(num + " ");
+        System.out.println("Processing numbers: " + Arrays.toString(nums));
+    }
+
+    public void processMixedData(Object[] data) {
+        System.out.print("Processing mixed data: ");
+        for (Object obj : data) {
+            System.out.print(obj.toString() + " ");
         }
         System.out.println();
+    }
+
+    public void processData(int num, String text) {
+        System.out.println("Processing data: " + num + ", " + text);
     }
 
     public static void main(String[] args) {
@@ -72,6 +85,11 @@ public class MethodOverloadingExample {
         MethodOverloadingExample example3 = new MethodOverloadingExample("Custom Message", nums);
         example3.displayMessage();
         example3.processNumbers();
+
+        String[] texts = {"one", "two", "three"};
+        example3.processMixedData(texts);
+
+        example3.processData(10, "Some data");
     }
     
 }
