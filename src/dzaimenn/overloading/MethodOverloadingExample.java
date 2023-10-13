@@ -6,6 +6,8 @@ public class MethodOverloadingExample {
     private String message;
     private int[] numbers;
     private boolean initialized;
+    private double[] doubles;
+    private char[] characters;
 
     public MethodOverloadingExample() {
         this("Default Message");
@@ -19,6 +21,21 @@ public class MethodOverloadingExample {
     public MethodOverloadingExample(String message, int[] numbers) {
         this.message = message;
         this.numbers = numbers;
+        this.initialized = true;
+    }
+
+    public MethodOverloadingExample(String message, int[] numbers, double[] doubles) {
+        this.message = message;
+        this.numbers = numbers;
+        this.doubles = doubles;
+        this.initialized = true;
+    }
+
+    public MethodOverloadingExample(String message, int[] numbers, double[] doubles, char[] characters) {
+        this.message = message;
+        this.numbers = numbers;
+        this.doubles = doubles;
+        this.characters = characters;
         this.initialized = true;
     }
 
@@ -58,6 +75,22 @@ public class MethodOverloadingExample {
         System.out.println("Processing numbers: " + Arrays.toString(nums));
     }
 
+    public void processDoubles() {
+        if (doubles == null) {
+            System.out.println("No doubles to process.");
+        } else {
+            System.out.println("Processing doubles: " + Arrays.toString(doubles));
+        }
+    }
+
+    public void processCharacters() {
+        if (characters == null) {
+            System.out.println("No characters to process.");
+        } else {
+            System.out.println("Processing characters: " + Arrays.toString(characters));
+        }
+    }
+
     public void processMixedData(Object[] data) {
         System.out.print("Processing mixed data: ");
         for (Object obj : data) {
@@ -82,9 +115,13 @@ public class MethodOverloadingExample {
         example2.processText("Hello", 3);
 
         int[] nums = {1, 2, 3, 4, 5};
-        MethodOverloadingExample example3 = new MethodOverloadingExample("Custom Message", nums);
+        double[] doubles = {1.1, 2.2, 3.3};
+        char[] chars = {'a', 'b', 'c'};
+        MethodOverloadingExample example3 = new MethodOverloadingExample("Custom Message", nums, doubles, chars);
         example3.displayMessage();
         example3.processNumbers();
+        example3.processDoubles();
+        example3.processCharacters();
 
         String[] texts = {"one", "two", "three"};
         example3.processMixedData(texts);
