@@ -2,7 +2,9 @@ package dzaimenn.moviecatalog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -22,6 +24,13 @@ public class MovieCatalog {
         } else {
             System.out.println("The movie '" + searchMovie + "' is not in the catalog.");
         }
+
+        MovieCatalogAssistant assistant = new MovieCatalogAssistant();
+        assistant.greet();
+
+        List<String> recommendedMovies = assistant.recommendMovies();
+        System.out.println("Recommended movies:");
+        recommendedMovies.forEach(System.out::println);
     }
 }
 
@@ -49,6 +58,30 @@ class MovieLibrary {
         Predicate<String> moviePredicate = movie -> movie.equalsIgnoreCase(searchMovie);
         List<String> foundMovies = movies.stream().filter(moviePredicate).collect(Collectors.toList());
         return !foundMovies.isEmpty();
+    }
+}
+
+class MovieCatalogAssistant {
+    private Map<String, List<String>> movieRecommendations;
+
+    public MovieCatalogAssistant() {
+        movieRecommendations = new HashMap<>();
+        List<String> comedyMovies = Arrays.asList("The Hangover", "Superbad", "Bridesmaids");
+        List<String> actionMovies = Arrays.asList("Die Hard", "Mad Max: Fury Road", "The Matrix");
+        List<String> dramaMovies = Arrays.asList("Forrest Gump", "The Pursuit of Happyness", "Schindler's List");
+        movieRecommendations.put("Comedy", comedyMovies);
+        movieRecommendations.put("Action", actionMovies);
+        movieRecommendations.put("Drama", dramaMovies);
+    }
+
+    public void greet() {
+        System.out.println("Hello! I am your Movie Catalog Assistant.");
+    }
+
+    public List<String> recommendMovies() {
+        List<String> recommendations = new ArrayList<>();
+        movieRecommendations.values().forEach(recommendations::addAll);
+        return recommendations;
     }
     
 }
