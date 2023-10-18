@@ -83,5 +83,5 @@ class MovieCatalogAssistant {
         movieRecommendations.values().forEach(recommendations::addAll);
         return recommendations;
     }
-    
+
 }
