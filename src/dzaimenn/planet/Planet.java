@@ -10,6 +10,14 @@ class Planet implements Runnable {
         this.distance = distance;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
     public void run() {
         travel();
     }
