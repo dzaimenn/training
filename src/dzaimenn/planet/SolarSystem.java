@@ -23,8 +23,6 @@ public class SolarSystem {
         for (Planet planet : planets) {
             planet.join();
         }
-
-        System.out.println("All planets have completed their journeys.");
     }
 
 }
