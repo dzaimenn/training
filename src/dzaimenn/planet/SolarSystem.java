@@ -5,7 +5,6 @@ import java.util.List;
 
 public class SolarSystem {
     public static void main(String[] args) throws InterruptedException {
-
         List<Planet> planets = new ArrayList<>();
 
         planets.add(new Planet("Mercury", 36));
