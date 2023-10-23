@@ -11,14 +11,19 @@ public class Calculator {
 
         System.out.println("Welcome to the Calculator!");
 
-        System.out.print("Enter first number: ");
-        num1 = scanner.nextDouble();
+        try {
+            System.out.print("Enter first number: ");
+            num1 = Double.parseDouble(scanner.nextLine());
 
-        System.out.print("Enter second number: ");
-        num2 = scanner.nextDouble();
+            System.out.print("Enter second number: ");
+            num2 = Double.parseDouble(scanner.nextLine());
+        } catch (NumberFormatException ex) {
+            System.out.println("Error! Invalid input. Please enter numeric values.");
+            return;
+        }
 
         System.out.print("Enter operator (+, -, *, /): ");
-        operator = scanner.next().charAt(0);
+        operator = scanner.nextLine().charAt(0);
 
         switch (operator) {
             case '+':
@@ -45,5 +50,5 @@ public class Calculator {
 
         System.out.println("Result: " + result);
     }
-
+    
 }
