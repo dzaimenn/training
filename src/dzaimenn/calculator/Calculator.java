@@ -8,21 +8,44 @@ public class Calculator {
         double num1, num2, result;
         char operator;
 
-        System.out.println("Welcome to the Calculator!");
+        System.out.println("Welcome to the Super Calculator!");
 
         try {
-            System.out.print("Enter first number: ");
+            System.out.print("Enter the first number: ");
             num1 = Double.parseDouble(scanner.nextLine());
 
-            System.out.print("Enter second number: ");
+            System.out.print("Enter the second number: ");
             num2 = Double.parseDouble(scanner.nextLine());
         } catch (NumberFormatException ex) {
             System.out.println("Error! Invalid input. Please enter numeric values.");
             return;
         }
 
-        System.out.print("Enter operator (+, -, *, /): ");
-        operator = scanner.nextLine().charAt(0);
+        System.out.println("Select an operation:");
+        System.out.println("1. Addition (+)");
+        System.out.println("2. Subtraction (-)");
+        System.out.println("3. Multiplication (*)");
+        System.out.println("4. Division (/)");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                operator = '+';
+                break;
+            case 2:
+                operator = '-';
+                break;
+            case 3:
+                operator = '*';
+                break;
+            case 4:
+                operator = '/';
+                break;
+            default:
+                System.out.println("Error! Invalid choice.");
+                return;
+        }
 
         result = calculate(num1, num2, operator);
         if (Double.isNaN(result)) {
