@@ -73,5 +73,5 @@ public class Calculator {
                 return Double.NaN; // Indicate error
         }
     }
-    
+
 }
