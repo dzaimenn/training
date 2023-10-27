@@ -23,6 +23,22 @@ public class StreamExample {
         System.out.println("Fruits with more than 5 letters: " + longFruits);
         System.out.println("Sum of even numbers from 1 to 10: " + sum);
         System.out.println("Array of integers from 1 to 5: " + Arrays.toString(rangeArray));
+
+        System.out.println("Here is an additional message to make the code larger.");
+        System.out.println("This could be an opportunity to discuss the importance of streams in Java.");
+        System.out.println("Streams provide a fluent and concise way to manipulate collections.");
+
+        Stream<String> modifiedFruitStream = fruits.stream().map(String::toUpperCase);
+        List<String> modifiedFruits = modifiedFruitStream.collect(Collectors.toList());
+
+        System.out.println("Modified list of fruits: " + modifiedFruits);
+
+        List<Integer> evenNumbers = IntStream.rangeClosed(1, 100)
+                .filter(n -> n % 2 == 0)
+                .boxed()
+                .collect(Collectors.toList());
+
+        System.out.println("Even numbers from 1 to 100: " + evenNumbers);
     }
     
 }
