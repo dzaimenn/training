@@ -40,5 +40,5 @@ public class StreamExample {
 
         System.out.println("Even numbers from 1 to 100: " + evenNumbers);
     }
-    
+
 }
