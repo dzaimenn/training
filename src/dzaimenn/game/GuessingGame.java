@@ -5,15 +5,22 @@ import java.util.Scanner;
 public class GuessingGame {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-        int secretNumber = (int) (Math.random() * 100) + 1;
+
+        System.out.println("Welcome to the Guessing Game!");
+
+        System.out.print("Enter the minimum number in the range: ");
+        int minNumber = scanner.nextInt();
+
+        System.out.print("Enter the maximum number in the range: ");
+        int maxNumber = scanner.nextInt();
+
+        int secretNumber = (int) (Math.random() * (maxNumber - minNumber + 1)) + minNumber;
         int guess = 0;
         int attempts = 0;
         final int MAX_ATTEMPTS = 5;
 
-        System.out.println("Welcome to the Guessing Game!");
-        System.out.println("Try to guess the secret number between 1 and 100.");
+        System.out.println("Try to guess the secret number between " + minNumber + " and " + maxNumber + ".");
         System.out.println("You have " + MAX_ATTEMPTS + " attempts.");
 
         while (guess != secretNumber && attempts < MAX_ATTEMPTS) {
