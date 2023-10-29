@@ -6,20 +6,28 @@ public class GuessingGame {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        boolean playAgain = true;
 
-        System.out.println("Welcome to the Guessing Game!");
+        while (playAgain) {
+            playGame(scanner);
+            System.out.print("Do you want to play again? (yes/no): ");
+            String playChoice = scanner.next();
+            playAgain = playChoice.equalsIgnoreCase("yes");
+        }
 
-        System.out.print("Enter the minimum number in the range: ");
-        int minNumber = scanner.nextInt();
+        System.out.println("Thank you for playing the Guessing Game!");
+        scanner.close();
+    }
 
-        System.out.print("Enter the maximum number in the range: ");
-        int maxNumber = scanner.nextInt();
-
+    public static void playGame(Scanner scanner) {
+        int minNumber = 1;
+        int maxNumber = 100;
         int secretNumber = (int) (Math.random() * (maxNumber - minNumber + 1)) + minNumber;
         int guess = 0;
         int attempts = 0;
         final int MAX_ATTEMPTS = 5;
 
+        System.out.println("Welcome to the Guessing Game!");
         System.out.println("Try to guess the secret number between " + minNumber + " and " + maxNumber + ".");
         System.out.println("You have " + MAX_ATTEMPTS + " attempts.");
 
@@ -40,8 +48,6 @@ public class GuessingGame {
         } else {
             System.out.println("Sorry, you've run out of attempts. The secret number was: " + secretNumber);
         }
-
-        scanner.close();
     }
     
 }
