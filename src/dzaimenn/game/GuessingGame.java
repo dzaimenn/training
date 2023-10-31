@@ -49,5 +49,5 @@ public class GuessingGame {
             System.out.println("Sorry, you've run out of attempts. The secret number was: " + secretNumber);
         }
     }
-    
+
 }
