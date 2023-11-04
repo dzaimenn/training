@@ -50,7 +50,7 @@ public class Main {
 
                     System.out.print("Enter amount: ");
                     double amount = scanner.nextDouble();
-                    
+
                     Transaction transaction = new Transaction(fromAccountNumber, toAccountNumber, amount);
                     transactionManager.addTransaction(transaction);
                     break;
