@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SolarSystem {
+
     public static void main(String[] args) throws InterruptedException {
         List<Planet> planets = new ArrayList<>();
 
@@ -15,6 +16,8 @@ public class SolarSystem {
         planets.add(new Planet("Saturn", 886));
         planets.add(new Planet("Uranus", 1782));
         planets.add(new Planet("Neptune", 2793));
+
+        System.out.println("Total planets: " + planets.size());
 
         for (Planet planet : planets) {
             planet.start();
