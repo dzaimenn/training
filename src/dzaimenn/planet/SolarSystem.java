@@ -17,7 +17,7 @@ public class SolarSystem {
         planets.add(new Planet("Uranus", 1782));
         planets.add(new Planet("Neptune", 2793));
 
-        System.out.println("Total planets: " + planets.size());
+        displayAverageDistance(planets);
 
         for (Planet planet : planets) {
             planet.start();
@@ -26,6 +26,15 @@ public class SolarSystem {
         for (Planet planet : planets) {
             planet.join();
         }
+    }
+
+    private static void displayAverageDistance(List<Planet> planets) {
+        double totalDistance = 0;
+        for (Planet planet : planets) {
+            totalDistance += planet.getDistance();
+        }
+        double averageDistance = totalDistance / planets.size();
+        System.out.println("Average distance between planets: " + averageDistance);
     }
 
 }
